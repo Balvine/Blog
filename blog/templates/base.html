@@ -17,6 +17,7 @@ rel="stylesheet">
 <a href="{% url 'post_new' %}">+ New Blog Post</a>
 </div>
 </header>
+
 {% if user.is_authenticated %}
 <p>Hi {{ user.username }}!</p>
 {% else %}
@@ -24,6 +25,11 @@ rel="stylesheet">
 <a href="{% url 'login' %}">Log In</a>
 {% endif %}
 
+{% if user.is_authenticated %}
+<p>Hi {{ user.username }}!</p>
+<p><a href="{% url 'logout' %}">Log out</a></p>
+{% else %}
+{% endif %}
 
 {% block content %}
 {% endblock content %}

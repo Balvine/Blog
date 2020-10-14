@@ -3,6 +3,7 @@ from django.urls import reverse # new
 
 # Create your models here.
 class Post(models.Model):
+   # blog_image = models.ImageField(upload_to = 'blog/')
    title = models.CharField(max_length=200)
 author = models.ForeignKey(
 'auth.User',
